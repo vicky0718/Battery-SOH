@@ -36,3 +36,15 @@ cycle:	top level structure array containing the charge, discharge and impedance 
 		Rectified_impedance:	Calibrated and smoothed battery impedance (Ohms) 
 		Re:			Estimated electrolyte resistance (Ohms)
 		Rct:			Estimated charge transfer resistance (Ohms)
+
+While using the datasets combine and place them within a folder or directory named battery_data.
+Following are the Prerequisties of this model( Make sure to have the following packages installed within your system):
+These were the versions of the modules during the building of this project:
+Pandas: 2.1.4
+Numpy: 1.26.4
+sklearn: 1.4.1.
+seaborn: 0.13.2
+Matplotlib: 3.7.5
+Tensorflow: 2.15.0
+Keras: 2.15.0
+Pycaret: 3.3.0
