@@ -1,51 +1,24 @@
-# DATA DESCRIPTION: 
+📊 Li-ion Battery Data for Operational Profiles and Prediction Tasks
+This repository contains data from a set of four Li-ion batteries (#5, 6, 7, and 18) run through three different operational profiles (charge, discharge, and impedance) at room temperature. The data can be used for predicting both the remaining charge (for a given discharge cycle) and the remaining useful life (RUL) of the batteries.
 
-A set of four Li-ion batteries (# 5, 6, 7 and 18) were run through 3 different operational profiles (charge, discharge and impedance) at room temperature. Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. Discharge was carried out at a constant current (CC) level of 2A until the battery voltage fell to 2.7V, 2.5V, 2.2V and 2.5V for batteries 5 6 7 and 18 respectively. Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. Repeated charge and discharge cycles result in accelerated aging of the batteries while impedance measurements provide insight into the internal battery parameters that change as aging progresses. The experiments were stopped when the batteries reached end-of-life (EOL) criteria, which was a 30% fade in rated capacity (from 2Ahr to 1.4Ahr). This dataset can be used for the prediction of both remaining charge (for a given discharge cycle) and remaining useful life (RUL).
+📂 Files
+B0005.mat: Data for Battery #5
+B0006.mat: Data for Battery #6
+B0007.mat: Data for Battery #7
+B0018.mat: Data for Battery #18
+📐 Data Structure
+The data is structured into cycles, each containing information on charge, discharge, and impedance operations.
 
-# Files:
-B0005.mat	Data for Battery #5
-B0006.mat	Data for Battery #6
-B0007.mat	Data for Battery #7
-B0018.mat	Data for Battery #18
-
-# Data Structure:
-cycle:	top level structure array containing the charge, discharge and impedance operations
-	type: 	operation  type, can be charge, discharge or impedance
-	ambient_temperature:	ambient temperature (degree C)
-	time: 	the date and time of the start of the cycle, in MATLAB  date vector format
-	data:	data structure containing the measurements
-	   for charge the fields are:
-		Voltage_measured: 	Battery terminal voltage (Volts)
-		Current_measured:	Battery output current (Amps)
-		Temperature_measured: 	Battery temperature (degree C)
-		Current_charge:		Current measured at charger (Amps)
-		Voltage_charge:		Voltage measured at charger (Volts)
-		Time:			Time vector for the cycle (secs)
-	   for discharge the fields are:
-		Voltage_measured: 	Battery terminal voltage (Volts)
-		Current_measured:	Battery output current (Amps)
-		Temperature_measured: 	Battery temperature (degree C)
-		Current_charge:		Current measured at load (Amps)
-		Voltage_charge:		Voltage measured at load (Volts)
-		Time:			Time vector for the cycle (secs)
-		Capacity:		Battery capacity (Ahr) for discharge till 2.7V 
-	   for impedance the fields are:
-		Sense_current:		Current in sense branch (Amps)
-		Battery_current:	Current in battery branch (Amps)
-		Current_ratio:		Ratio of the above currents 
-		Battery_impedance:	Battery impedance (Ohms) computed from raw data
-		Rectified_impedance:	Calibrated and smoothed battery impedance (Ohms) 
-		Re:			Estimated electrolyte resistance (Ohms)
-		Rct:			Estimated charge transfer resistance (Ohms)
-
-While using the datasets combine and place them within a folder or directory named battery_data.
-# Following are the Prerequisties of this model( Make sure to have the following packages installed within your system):
-These were the versions of the modules during the building of this project:
-Pandas: 2.1.4
-Numpy: 1.26.4
-sklearn: 1.4.1.
-seaborn: 0.13.2
-Matplotlib: 3.7.5
-Tensorflow: 2.15.0
-Keras: 2.15.0
-Pycaret: 3.3.0
+Cycle Structure
+cycle: Top-level structure array containing the charge, discharge, and impedance operations.
+type: Operation type (charge, discharge, or impedance).
+ambient_temperature: Ambient temperature (°C).
+time: Start time of the cycle (MATLAB date vector format).
+data: Data structure containing measurements.
+Charge Data Fields
+Voltage_measured: Battery terminal voltage (Volts).
+Current_measured: Battery output current (Amps).
+Temperature_measured: Battery temperature (°C).
+Current_charge: Current measured at charger (Amps).
+Voltage_charge: Voltage measured at charger (Volts).
+Time: Time vector for the cycle (secs).
