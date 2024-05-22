@@ -1,4 +1,4 @@
-📊 Li-ion Battery Data for Operational Profiles and Prediction Tasks
+📊 **Li-ion Battery Data for Operational Profiles and Prediction Tasks**
 This repository contains data from a set of four Li-ion batteries (#5, 6, 7, and 18) run through three different operational profiles (charge, discharge, and impedance) at room temperature. The data can be used for predicting both the remaining charge (for a given discharge cycle) and the remaining useful life (RUL) of the batteries.
 
 📂 Files
